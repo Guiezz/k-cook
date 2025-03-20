@@ -6,7 +6,7 @@ struct RecipeDetailView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack {
                 AsyncImage(url: URL(string: receita.imagem)) { phase in
                     if let image = phase.image {
                         image
@@ -14,27 +14,65 @@ struct RecipeDetailView: View {
                             .scaledToFit()
                     } else if phase.error != nil {
                         Color.gray
-                            .frame(height: 200)
+                            .frame(height: 337)
                     } else {
                         ProgressView()
-                            .frame(height: 200)
+                            .frame(height: 337)
                     }
                 }
-                Text(receita.nome)
-                    .font(.headline)
-                Text(
-                    "\(receita.tempo_preparo) • \(receita.porcoes) • \(receita.dificuldade)"
-                )
-                .font(.subheadline)
+                VStack(alignment: .leading, spacing: 20) {
+                    Text(receita.nome)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                    
+                    HStack (alignment: .center, spacing: 20){
+                        VStack (alignment: .center, spacing: 5){
+                            Image(systemName: "stopwatch")
+                                .foregroundColor(.red)
+                            Text("Tempo de Preparo:")
+                                .font(.caption)
+                                .multilineTextAlignment(.center)
+                            Text(receita.tempo_preparo)
+                                .font(.footnote)
+                                .fontWeight(.bold)
+                        }
+                        VStack (alignment: .center, spacing: 5){
+                            Image(systemName: "chart.bar")
+                                .foregroundColor(.red)
+                            Text("Dificuldade:")
+                                .font(.caption)
+                            Text(receita.dificuldade)
+                                .font(.footnote)
+                                .fontWeight(.bold)
+                        }
 
-                // Seção de Doramas relacionados
-                DoramasSection(doramaIDs: receita.dorama_ids)
+                        VStack (alignment: .center, spacing: 5){
+                            Image(systemName: "fork.knife")
+                                .foregroundColor(.red)
+                            Text("Porções:")
+                                .font(.caption)
+                            Text(receita.porcoes)
+                                .font(.footnote)
+                                .fontWeight(.bold)
+                        }
+                        VStack (alignment: .center, spacing: 5){
+                            Image(systemName: "cup.and.saucer")
+                                .foregroundColor(.red)
+                            Text("Refeição:")
+                                .font(.caption)
+                            Text(receita.refeicao)
+                                .font(.footnote)
+                                .fontWeight(.bold)
+                        }
+                    }
+                    .cornerRadius(8)
 
-                // Seção de Ingredientes
-                IngredientsSection(ingredientes: receita.ingredientes)
+                    DoramasSection(doramaIDs: receita.dorama_ids)
 
-                // Seção de Preparo
-                PreparationSection(passos: receita.preparo)
+                    IngredientsSection(ingredientes: receita.ingredientes)
+
+                    PreparationSection(passos: receita.preparo)
+                }
             }
             .padding()
         }
@@ -44,12 +82,12 @@ struct RecipeDetailView: View {
 
 #Preview {
     let dataManager = DataManager()
-    
+
     dataManager.loadData()
-    
+
     let receitaExemplo = dataManager.receitas[1]
-    
+
     return RecipeDetailView(receita: receitaExemplo)
         .environmentObject(dataManager)
-    
+
 }
