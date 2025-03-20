@@ -29,3 +29,15 @@ struct PreparationSection: View {
         .padding(.vertical)
     }
 }
+
+#Preview {
+    let dataManager = DataManager()
+    
+    dataManager.loadData()
+    
+    let passosExemplo = dataManager.receitas.first?.preparo ?? []
+    
+    return PreparationSection(passos: passosExemplo)
+        .environmentObject(dataManager)
+
+}

@@ -56,5 +56,10 @@ struct DoramasSection: View {
 }
 
 #Preview {
-    DoramasSection(doramaIDs: [1])
+    let dataManager = DataManager()
+
+    dataManager.loadData()
+
+    return DoramasSection(doramaIDs: [1, 2, 3, 4, 5])
+        .environmentObject(dataManager)
 }
