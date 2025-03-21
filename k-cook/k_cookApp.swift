@@ -35,7 +35,7 @@ struct k_cookApp: App {
 
         
         WindowGroup {
-            RecipeCardView(receita: receitaExemplo)
+            RecipeDetailView(receita: receitaExemplo)
         }
     }
 }
