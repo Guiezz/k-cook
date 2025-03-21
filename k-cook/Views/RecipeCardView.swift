@@ -21,7 +21,7 @@ struct RecipeCardView: View {
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 144, height: 187)
+                            .frame(width: 150, height: 187)
                     } else if phase.error != nil {
                         Color.gray
                             .frame(width: 144, height: 187)
@@ -49,7 +49,7 @@ struct RecipeCardView: View {
                 }
                 .padding(10)
             }
-            .frame(width: 144, height: 187)
+            .frame(width: 150, height: 187)
             .cornerRadius(8)
             .clipped()
         }
