@@ -1,138 +1,104 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var showingSheet = false
-    
+    @EnvironmentObject var dataManager: DataManager
+    @State private var selectedReceita: Receita?
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            HStack {
-                Text("K-COOK")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.red)
-                    .fontDesign(.monospaced)
-                Spacer()
-            }
-            .offset(x:15, y:-120)
-        }
-        
-        VStack(alignment: .leading, spacing: 20) {
-            Text("O que vamos preparar?")
-                .font(.custom("Poppins-Bold", size: 25))
-                .fontWeight(.bold)
-                .foregroundColor(.black)
-                .fontDesign(.default)
-                .offset(x:15, y:-69)
-            
-            Text("Hora de cozinhar!")
-                .font(.custom("Poppins-Bold", size: 25))
-                .fontWeight(.bold)
-                .foregroundColor(.black)
-                .fontDesign(.default)
-                .offset(x:15, y:-150)
-        }
-        .offset(x:-65, y:-0)
-        
-        VStack{
-            HStack(spacing: 40){
-                Button(action: {
-                    print("Teste")
-                }) {
-                    VStack{
-                        Image(systemName: "cup.and.saucer.fill")
-                        Text("Café da manhã")
-                    }
-                    .border(Color.black, width: 1)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                HStack {
+                    Text("K-COOK")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.red)
+                        .fontDesign(.monospaced)
+                    Spacer()
                 }
-                Button(action: {
-                    print("Teste")
-                }) {
-                    VStack {
-                        Image(systemName: "cup.and.saucer.fill")
-                        Text("Almoço")
-                    }
-                    .border(Color.black, width: 1)
+                .padding(.horizontal)
+
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("O que vamos preparar?")
+                        .font(.title2)
+                        .fontWeight(.bold)
+
+                    Text("Hora de cozinhar!")
+                        .font(.title3)
+                        .foregroundColor(.secondary)
                 }
-                Button(action: {
-                    print("Teste")
-                }) {
-                    VStack {
-                        Image(systemName: "sunrise.fill")
-                        Text("Jantar")
-                    }
-                    .border(Color.black, width: 1)
-                }
-            }
-            .offset(x:0, y:-100)
-        }
-            
-            
-            
-    
-            VStack{
-                Text("Receitas")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .fontDesign(.default)
-                    .offset(x:-124, y:20)
-                
-                ScrollView(.horizontal) {
-                    HStack(spacing: 20){
-                        ForEach(0..<5){_ in
-                            Image(systemName: "star.fill")
+                .padding(.horizontal)
+                ScrollView(.horizontal, showsIndicators: false) {
+
+                    HStack(spacing: 10) {
+                        ForEach(
+                            ["Café da manhã", "Almoço", "Jantar", "Sobremesa"],
+                            id: \.self
+                        ) { refeicao in
+                            Button(action: {
+                                // Adicionar ações de filtro dps
+                            }) {
+                                VStack {
+                                    Text(refeicao)
+                                        .font(.caption)
+                                }
+
+                                .padding()
+                                .background(Color(.systemBackground))
+                                .cornerRadius(10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.blue, lineWidth: 5)
+                                )
+
+                            }
                         }
-                        Text("aaaaaaa")
-                        Text("bbbbbbb")
-                        Text("ccccccc")
-                        
                     }
+                    .padding()
                 }
                 .padding()
-            }
-            .offset(x:-1, y:0)
-            
-            VStack{
-                Text("Doramas")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .fontDesign(.default)
-                    .offset(x:-124, y:20)
-                
-                ScrollView(.horizontal) {
-                    HStack(spacing: 20){
-                        Image(systemName: "star.fill")
-                        Text("aaaaaaa")
-                        Text("bbbbbbb")
-                        Text("ccccccc")
+
+                VStack(alignment: .leading) {
+                    Text("Receitas")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(.horizontal)
+
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 15) {
+                            ForEach(dataManager.receitas) { receita in
+                                RecipeCardView(receita: receita)
+                                    .frame(width: 147)
+                                    .onTapGesture {
+                                        selectedReceita = receita
+                                    }
+                            }
+                        }
+                        .padding(.horizontal)
                     }
                 }
-                .padding()
             }
-            .offset(x:-1, y:0)
-            
-            VStack{
-                Text("Histórias")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .fontDesign(.default)
-                    .offset(x:-124, y:20)
-                
-                ScrollView(.horizontal) {
-                    HStack(spacing: 20){
-                        Image(systemName: "star.fill")
-                        Text("aaaaaaa")
-                        Text("bbbbbbb")
-                        Text("ccccccc")
-                    }
-                }
-                .padding()
-            }
-        
+            .padding(.vertical)
+        }
+        .sheet(item: $selectedReceita) { receita in
+            RecipeDetailSheet(receita: receita)
+        }
+    }
+
+    private func refeicaoIcon(for refeicao: String) -> String {
+        switch refeicao {
+        case "Café da manhã": return "cup.and.saucer.fill"
+        case "Almoço": return "fork.knife"
+        case "Jantar": return "sunset.fill"
+        case "Sobremesa": return "apple.logo"
+        default: return "questionmark"
+        }
     }
 }
+
 #Preview {
-    HomeView()
+    let dataManager = DataManager()
+    dataManager.loadData()
+
+    return HomeView()
+        .environmentObject(dataManager)
 }

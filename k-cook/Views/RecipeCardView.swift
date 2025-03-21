@@ -9,45 +9,76 @@ import SwiftUI
 
 struct RecipeCardView: View {
     let receita: Receita
+    @State private var showingDetail = false
 
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
-            AsyncImage(url: URL(string: receita.imagem)) { phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 144, height: 187)
-                } else if phase.error != nil {
-                    Color.gray
-                        .frame(width: 144, height: 187)
-                } else {
-                    ProgressView()
-                        .frame(width: 144, height: 187)
+        Button(action: {
+            showingDetail = true
+        }) {
+            ZStack(alignment: .bottomLeading) {
+                AsyncImage(url: URL(string: receita.imagem)) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 144, height: 187)
+                    } else if phase.error != nil {
+                        Color.gray
+                            .frame(width: 144, height: 187)
+                    } else {
+                        ProgressView()
+                            .frame(width: 144, height: 187)
+                    }
                 }
+                .clipped()
+                
+                Rectangle()
+                    .fill(LinearGradient(
+                        gradient: Gradient(colors: [.clear, .black.opacity(0.5)]),
+                        startPoint: .top,
+                        endPoint: .bottom
+                    ))
+                
+                VStack(alignment: .leading) {
+                    Text(receita.nome)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                    Text("\(receita.tempo_preparo) | \(receita.dificuldade)")
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+                }
+                .padding(10)
             }
+            .frame(width: 144, height: 187)
+            .cornerRadius(8)
             .clipped()
-            
-            Rectangle()
-                .fill(LinearGradient(
-                    gradient: Gradient(colors: [.clear, .black.opacity(0.5)]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                ))
-            
-            VStack(alignment: .leading) {
-                Text(receita.nome)
-                    .font(.headline)
-                    .foregroundColor(.white)
-                Text("\(receita.tempo_preparo) | \(receita.dificuldade)")
-                    .font(.subheadline)
-                    .foregroundColor(.white)
-            }
-            .padding(10)
         }
-        .frame(width: 144, height: 187)
-        .cornerRadius(8)
-        .clipped()
+        .buttonStyle(PlainButtonStyle())
+        .sheet(isPresented: $showingDetail) {
+            RecipeDetailSheet(receita: receita)
+        }
+    }
+}
+
+struct RecipeDetailSheet: View {
+    let receita: Receita
+    @Environment(\.dismiss) var dismiss
+    
+    var body: some View {
+        NavigationStack {
+            RecipeDetailView(receita: receita)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.gray)
+                        }
+                    }
+                }
+        }
     }
 }
 
