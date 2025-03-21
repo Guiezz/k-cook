@@ -3,7 +3,8 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var dataManager: DataManager
     @State private var selectedReceita: Receita?
-
+    @State private var selectedDorama: Dorama?
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -14,45 +15,44 @@ struct HomeView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.red)
                             .fontDesign(.monospaced)
+                            .offset(x: 0, y: 39)
                         Spacer()
                     }
                     .padding(.horizontal)
 
-                    // Títulos
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Hora de cozinhar!")
                             .font(.title2)
                             .fontWeight(.bold)
-
+                            .offset(x: 0, y: 42)
+                        
                         Text("O que vamos preparar?")
                             .font(.title2)
                             .fontWeight(.bold)
+                            .offset(x: 0, y: 35)
                     }
                     .padding(.horizontal)
 
-                    
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
                             ForEach(
-                                [
-                                    "Café da manhã", "Almoço", "Jantar",
-                                    "Sobremesa",
-                                ],
+                                ["Café da manhã", "Almoço", "Jantar", "Sobremesa"],
                                 id: \.self
                             ) { refeicao in
-                                Button(action: {
-                                    // Adicionar ações de filtro dps
-                                }) {
+                                Button(action: {}) {
                                     VStack {
                                         Text(refeicao)
                                             .font(.caption)
+                                            .foregroundColor(.black)
+                                            .fontWeight(.bold)
                                     }
+                                    .frame(width: 90, height: 1, alignment: .center)
                                     .padding()
-                                    .background(Color(.systemBackground))
-                                    .cornerRadius(10)
+                                    .background(Color.white.opacity(0.2))
+                                    .cornerRadius(20)
                                     .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(.blue, lineWidth: 5)
+                                        RoundedRectangle(cornerRadius: 18)
+                                            .stroke(.black, lineWidth: 1)
                                     )
                                 }
                             }
@@ -61,7 +61,6 @@ struct HomeView: View {
                     }
                     .padding()
 
-                    
                     VStack(alignment: .leading) {
                         HStack {
                             Text("Receitas")
@@ -69,7 +68,7 @@ struct HomeView: View {
                                 .fontWeight(.bold)
                                 .padding(.horizontal)
                             Spacer()
-
+                            
                             NavigationLink(destination: AllRecipesView()) {
                                 Text("Ver tudo")
                                     .foregroundColor(.red)
@@ -91,6 +90,30 @@ struct HomeView: View {
                             .padding(.horizontal)
                         }
                     }
+                    .offset(x: 0, y: -37)
+
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Doramas")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .padding(.horizontal)
+                            Spacer()
+                        }
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 15) {
+                                ForEach(dataManager.doramas) { dorama in
+                                    DoramasSection(doramaIDs: [1, 2, 3, 4, 5])
+                                        .frame(width: 147)
+                                        .onTapGesture {
+                                            selectedDorama = dorama
+                                        }
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                    }
                 }
                 .padding(.vertical)
             }
@@ -102,8 +125,7 @@ struct HomeView: View {
 }
 
 #Preview {
-
+    
     HomeView()
-           .environmentObject(DataManager())
-
+        .environmentObject(DataManager())
 }
