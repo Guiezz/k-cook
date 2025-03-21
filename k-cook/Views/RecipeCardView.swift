@@ -56,6 +56,8 @@ struct RecipeCardView: View {
         .buttonStyle(PlainButtonStyle())
         .sheet(isPresented: $showingDetail) {
             RecipeDetailSheet(receita: receita)
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(40)
         }
     }
 }
