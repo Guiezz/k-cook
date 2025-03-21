@@ -21,13 +21,13 @@ struct RecipeCardView: View {
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 150, height: 187)
+                            .frame(width: 300, height: 187)
                     } else if phase.error != nil {
                         Color.gray
-                            .frame(width: 144, height: 187)
+                            .frame(width: 300, height: 187)
                     } else {
                         ProgressView()
-                            .frame(width: 144, height: 187)
+                            .frame(width: 300, height: 187)
                     }
                 }
                 .clipped()
@@ -47,10 +47,11 @@ struct RecipeCardView: View {
                         .font(.subheadline)
                         .foregroundColor(.white)
                 }
+                .offset(x:20, y:-20)
                 .padding(10)
             }
-            .frame(width: 150, height: 187)
-            .cornerRadius(8)
+            .frame(width: 260, height: 140)
+            .cornerRadius(15)
             .clipped()
         }
         .buttonStyle(PlainButtonStyle())

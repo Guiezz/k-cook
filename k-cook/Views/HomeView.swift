@@ -9,16 +9,7 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    HStack {
-                        Text("K-COOK")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(.red)
-                            .fontDesign(.monospaced)
-                            .offset(x: 0, y: 39)
-                        Spacer()
-                    }
-                    .padding(.horizontal)
+                   
 
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Hora de cozinhar!")
@@ -78,42 +69,43 @@ struct HomeView: View {
                         }
 
                         ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 15) {
+                            HStack(spacing: 100) {
                                 ForEach(dataManager.receitas) { receita in
                                     RecipeCardView(receita: receita)
-                                        .frame(width: 147)
+                                        .frame(width: 175)
                                         .onTapGesture {
                                             selectedReceita = receita
                                         }
                                 }
                             }
+                            .offset(x:42, y:0)
                             .padding(.horizontal)
                         }
                     }
                     .offset(x: 0, y: -37)
 
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text("Doramas")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .padding(.horizontal)
-                            Spacer()
-                        }
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 15) {
-                                ForEach(dataManager.doramas) { dorama in
-                                    DoramasSection(doramaIDs: [1, 2, 3, 4, 5])
-                                        .frame(width: 147)
-                                        .onTapGesture {
-                                            selectedDorama = dorama
-                                        }
-                                }
-                            }
-                            .padding(.horizontal)
-                        }
-                    }
+//                    VStack(alignment: .leading) {
+//                        HStack {
+//                            Text("Doramas")
+//                                .font(.title2)
+//                                .fontWeight(.bold)
+//                                .padding(.horizontal)
+//                            Spacer()
+//                        }
+//                        
+//                        ScrollView(.horizontal, showsIndicators: false) {
+//                            HStack(spacing: 15) {
+//                                ForEach(dataManager.doramas) { dorama in
+//                                    DoramasSection(doramaIDs: [1, 2, 3, 4, 5])
+//                                        .frame(width: 147)
+//                                        .onTapGesture {
+//                                            selectedDorama = dorama
+//                                        }
+//                                }
+//                            }
+//                            .padding(.horizontal)
+//                        }
+//                    }
                 }
                 .padding(.vertical)
             }

@@ -13,7 +13,7 @@ struct AllRecipesView: View {
 
     var body: some View {
         ScrollView(.vertical) {
-            LazyVGrid(columns: columns, spacing: 20) {
+            VStack(spacing: 15) {
                 ForEach(dataManager.receitas) { receita in
                     RecipeCardView(receita: receita)
                         .aspectRatio(0.7, contentMode: .fit)
@@ -22,6 +22,7 @@ struct AllRecipesView: View {
                         }
                 }
             }
+            .offset(x: 10,y: 10)
             .padding(.vertical)
         }
         .sheet(item: $selectedReceita) { receita in
