@@ -59,9 +59,6 @@ struct AllRecipesView: View {
             .offset(x: 10, y: 10)
             .padding(.vertical)
         }
-        .sheet(item: $selectedReceita) { receita in
-            RecipeDetailSheet(receita: receita)
-        }
         .navigationTitle("Todas as receitas")
         .navigationBarTitleDisplayMode(.large)
         .navigationBarBackButtonHidden(true)

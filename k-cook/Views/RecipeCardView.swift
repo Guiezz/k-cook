@@ -9,12 +9,9 @@ import SwiftUI
 
 struct RecipeCardView: View {
     let receita: Receita
-    @State private var showingDetail = false
-
+    
     var body: some View {
-        Button(action: {
-            showingDetail = true
-        }) {
+        NavigationLink(destination: RecipeDetailView(receita: receita)) {
             ZStack(alignment: .bottomLeading) {
                 AsyncImage(url: URL(string: receita.imagem)) { phase in
                     if let image = phase.image {
@@ -54,45 +51,16 @@ struct RecipeCardView: View {
             .cornerRadius(15)
             .clipped()
         }
-        .buttonStyle(PlainButtonStyle())
-        .sheet(isPresented: $showingDetail) {
-            RecipeDetailSheet(receita: receita)
-                .presentationDragIndicator(.visible)
-                .presentationCornerRadius(40)
-        }
     }
 }
 
-struct RecipeDetailSheet: View {
-    let receita: Receita
-    @Environment(\.dismiss) var dismiss
-    
-    var body: some View {
-        NavigationStack {
-            RecipeDetailView(receita: receita)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.gray)
-                        }
-                    }
-                }
-        }
-    }
-}
 
 #Preview {
     let dataManager = DataManager()
 
-    dataManager.loadData()
-
     let receitaExemplo = dataManager.receitas[1]
 
-    return RecipeCardView(receita: receitaExemplo)
+    RecipeCardView(receita: receitaExemplo)
         .environmentObject(dataManager)
 
 }

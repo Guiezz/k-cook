@@ -5,17 +5,13 @@
 //  Created by User on 24/03/25.
 //
 
-
 import SwiftUI
 
 struct DailyRecipeCardView: View {
     let receita: Receita
-    @State private var showingDetail = false
 
     var body: some View {
-        Button(action: {
-            showingDetail = true
-        }) {
+        NavigationLink(destination: RecipeDetailView(receita: receita)) {
             ZStack(alignment: .bottomLeading) {
                 AsyncImage(url: URL(string: receita.imagem)) { phase in
                     if let image = phase.image {
@@ -32,14 +28,17 @@ struct DailyRecipeCardView: View {
                     }
                 }
                 .clipped()
-                
+
                 Rectangle()
-                    .fill(LinearGradient(
-                        gradient: Gradient(colors: [.clear, .black.opacity(0.5)]),
-                        startPoint: .top,
-                        endPoint: .bottom
-                    ))
-                
+                    .fill(
+                        LinearGradient(
+                            gradient: Gradient(colors: [
+                                .clear, .black.opacity(0.5),
+                            ]),
+                            startPoint: .top,
+                            endPoint: .bottom
+                        ))
+
                 VStack(alignment: .leading) {
                     Text(receita.nome)
                         .font(.headline)
@@ -54,24 +53,12 @@ struct DailyRecipeCardView: View {
             .cornerRadius(15)
             .clipped()
         }
-        .buttonStyle(PlainButtonStyle())
-        .sheet(isPresented: $showingDetail) {
-            RecipeDetailSheet(receita: receita)
-                .presentationDragIndicator(.visible)
-                .presentationCornerRadius(40)
-        }
     }
 }
-
 
 #Preview {
     let dataManager = DataManager()
 
-    dataManager.loadData()
-
-    let receitaExemplo = dataManager.receitas[1]
-
-    return DailyRecipeCardView(receita: receitaExemplo)
+    DailyRecipeCardView(receita: dataManager.receitas[1])
         .environmentObject(dataManager)
-
 }

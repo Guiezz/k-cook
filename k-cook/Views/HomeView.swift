@@ -5,7 +5,7 @@ struct HomeView: View {
     @State private var selectedReceita: Receita?
     @State private var selectedHistoria: Historias?
     @State private var dailyReceita: Receita?
-    
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -15,7 +15,7 @@ struct HomeView: View {
                             Text("Hora de cozinhar!")
                                 .font(.title2)
                                 .fontWeight(.bold)
-                            
+
                             Text("O que vamos preparar?")
                                 .font(.title2)
                                 .fontWeight(.bold)
@@ -23,7 +23,7 @@ struct HomeView: View {
 
                         }
                         .padding(.horizontal)
-                        
+
                         VStack {
                             if let dailyReceita = dailyReceita {
                                 DailyRecipeCardView(receita: dailyReceita)
@@ -36,7 +36,7 @@ struct HomeView: View {
                         }
                     }
                     .padding(.bottom)
-                    
+
                     VStack(alignment: .leading) {
                         HStack {
                             Text("Receitas")
@@ -44,7 +44,7 @@ struct HomeView: View {
                                 .fontWeight(.bold)
                                 .padding(.horizontal)
                             Spacer()
-                            
+
                             NavigationLink(destination: AllRecipesView()) {
                                 Text("Ver tudo")
                                     .foregroundColor(.red)
@@ -52,7 +52,7 @@ struct HomeView: View {
                                     .padding(.horizontal)
                             }
                         }
-                        
+
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 15) {
                                 ForEach(dataManager.receitas) { receita in
@@ -65,7 +65,7 @@ struct HomeView: View {
                             .padding(.horizontal)
                         }
                     }
-                    
+
                     VStack(alignment: .leading) {
                         HStack {
                             Text("Histórias Coreanas")
@@ -74,7 +74,7 @@ struct HomeView: View {
                                 .padding(.horizontal)
                             Spacer()
                         }
-                        
+
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 15) {
                                 ForEach(dataManager.historias) { historia in
@@ -94,15 +94,12 @@ struct HomeView: View {
             .onAppear {
                 updateDailyRecipe()
             }
-            .onReceive(dataManager.$receitas) { _ in
+            .onReceive(dataManager.$receitas) { t in
                 updateDailyRecipe()
-            }
-            .sheet(item: $selectedReceita) { receita in
-                RecipeDetailSheet(receita: receita)
             }
         }
     }
-    
+
     private func updateDailyRecipe() {
         dailyReceita = dataManager.receitas.randomElement()
     }
