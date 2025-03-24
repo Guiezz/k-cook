@@ -8,7 +8,7 @@ struct AllRecipesView: View {
 
     private let columns = [
         GridItem(.flexible(), spacing: 0),
-        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0)
     ]
 
     var body: some View {

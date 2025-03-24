@@ -24,19 +24,18 @@ struct RecipeDetailView: View {
                     Text(receita.nome)
                         .font(.title3)
                         .fontWeight(.bold)
-                    
-                    HStack (alignment: .center, spacing: 20){
-                        VStack (alignment: .center, spacing: 5){
+                    HStack(alignment: .center, spacing: 20) {
+                        VStack(alignment: .center, spacing: 5) {
                             Image(systemName: "stopwatch")
                                 .foregroundColor(.red)
                             Text("Tempo de Preparo:")
                                 .font(.caption)
                                 .multilineTextAlignment(.center)
-                            Text(receita.tempo_preparo)
+                            Text(receita.tempoPreparo)
                                 .font(.footnote)
                                 .fontWeight(.bold)
                         }
-                        VStack (alignment: .center, spacing: 5){
+                        VStack(alignment: .center, spacing: 5) {
                             Image(systemName: "chart.bar")
                                 .foregroundColor(.red)
                             Text("Dificuldade:")
@@ -46,7 +45,7 @@ struct RecipeDetailView: View {
                                 .fontWeight(.bold)
                         }
 
-                        VStack (alignment: .center, spacing: 5){
+                        VStack(alignment: .center, spacing: 5) {
                             Image(systemName: "fork.knife")
                                 .foregroundColor(.red)
                             Text("Porções:")
@@ -55,7 +54,7 @@ struct RecipeDetailView: View {
                                 .font(.footnote)
                                 .fontWeight(.bold)
                         }
-                        VStack (alignment: .center, spacing: 5){
+                        VStack(alignment: .center, spacing: 5) {
                             Image(systemName: "cup.and.saucer")
                                 .foregroundColor(.red)
                             Text("Refeição:")
@@ -67,7 +66,7 @@ struct RecipeDetailView: View {
                     }
                     .cornerRadius(8)
 
-                    DoramasSection(doramaIDs: receita.dorama_ids)
+                    DoramasSection(doramaIDs: receita.doramaIds)
 
                     IngredientsSection(ingredientes: receita.ingredientes)
 

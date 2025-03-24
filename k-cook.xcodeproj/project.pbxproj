@@ -59,6 +59,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CEADF9692D91940900B18F9D /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				CED9C1FA2D89DD8C0071C018 /* k-cook */,
@@ -94,6 +95,9 @@
 			);
 			mainGroup = CED9C1EF2D89DD8C0071C018;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CEADF9672D9193EA00B18F9D /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CED9C1F92D89DD8C0071C018 /* Products */;
 			projectDirPath = "";
@@ -123,6 +127,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEADF9692D91940900B18F9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = CEADF9682D91940900B18F9D /* SwiftLintBuildToolPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CED9C2062D89DD8D0071C018 /* Debug */ = {
@@ -324,6 +335,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEADF9672D9193EA00B18F9D /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SimplyDanny/SwiftLintPlugins";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.58.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEADF9682D91940900B18F9D /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEADF9672D9193EA00B18F9D /* XCRemoteSwiftPackageReference "SwiftLintPlugins" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CED9C1F02D89DD8C0071C018 /* Project object */;
 }

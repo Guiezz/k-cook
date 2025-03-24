@@ -1,10 +1,3 @@
-//
-//  DoramasSection.swift
-//  k-cook
-//
-//  Created by User on 20/03/25.
-//
-
 import SwiftUI
 
 struct DoramasSection: View {
@@ -19,43 +12,39 @@ struct DoramasSection: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 15) {
                     ForEach(doramaIDs, id: \.self) { id in
-                        if let dorama = dataManager.doramas.first(where: {
-                            $0.id == id
-                        }) {
+                        if let dorama = dataManager.doramas.first(where: { $0.id == id }) {
                             ZStack(alignment: .bottomLeading) {
-                                AsyncImage(url: URL(string: dorama.imagem)) {
-                                    phase in
-                                    if let image = phase.image {
+                                AsyncImage(url: URL(string: dorama.imagem)) { phase in
+                                    switch phase {
+                                    case .success(let image):
                                         image
                                             .resizable()
                                             .scaledToFill()
                                             .frame(width: 144, height: 187)
                                             .cornerRadius(10)
-                                    } else if phase.error != nil {
+                                    case .failure:
                                         Color.gray
                                             .frame(width: 144, height: 187)
                                             .cornerRadius(10)
-                                    } else {
+                                    case .empty:
                                         ProgressView()
                                             .frame(width: 144, height: 187)
+                                    @unknown default:
+                                        EmptyView()
                                     }
                                 }
 
                                 Rectangle()
                                     .fill(
                                         LinearGradient(
-                                            gradient: Gradient(colors: [
-                                                .clear, .black.opacity(0.9),
-                                            ]),
+                                            gradient: Gradient(colors: [.clear, .black.opacity(0.9)]),
                                             startPoint: .top,
                                             endPoint: .bottom
                                         )
                                     )
                                     .frame(height: 60)
                                     .cornerRadius(10)
-                                    
-
-                                Text(dorama.nome_pt)
+                                Text(dorama.nomePt)
                                     .foregroundColor(.white)
                                     .font(.caption)
                                     .lineLimit(2)
@@ -69,13 +58,4 @@ struct DoramasSection: View {
         }
         .padding(.vertical)
     }
-}
-
-#Preview {
-    let dataManager = DataManager()
-
-    dataManager.loadData()
-
-    return DoramasSection(doramaIDs: [1, 2, 3, 4, 5])
-        .environmentObject(dataManager)
 }
