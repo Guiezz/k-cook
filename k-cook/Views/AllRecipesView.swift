@@ -12,6 +12,40 @@ struct AllRecipesView: View {
     ]
 
     var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 10) {
+                ForEach(
+                    [
+                        "Café da manhã", "Almoço", "Jantar",
+                        "Sobremesa",
+                    ],
+                    id: \.self
+                ) { refeicao in
+                    Button(
+                        action: {},
+                        label: {
+                            VStack {
+                                Text(refeicao)
+                                    .font(.caption)
+                                    .foregroundColor(.black)
+                                    .fontWeight(.bold)
+                            }
+                            .frame(
+                                width: 90, height: 1,
+                                alignment: .center
+                            )
+                            .padding()
+                            .background(Color.white.opacity(0.2))
+                            .cornerRadius(20)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 18)
+                                    .stroke(.black, lineWidth: 1)
+                            )
+                        })
+                }
+            }
+        }
+        .padding()
         ScrollView(.vertical) {
             VStack(spacing: 15) {
                 ForEach(dataManager.receitas) { receita in
@@ -22,7 +56,7 @@ struct AllRecipesView: View {
                         }
                 }
             }
-            .offset(x: 10,y: 10)
+            .offset(x: 10, y: 10)
             .padding(.vertical)
         }
         .sheet(item: $selectedReceita) { receita in
