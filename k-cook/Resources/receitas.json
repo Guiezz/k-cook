@@ -147,7 +147,7 @@
       "tempo_preparo": "30 minutos",
       "porcoes": "4 porções",
       "dificuldade": "Média",
-      "refeicao": "Lanche",
+      "refeicao": "Café da manhã",
       "ingredientes": [
         { "id": 1, "nome": "2 xícaras de arroz cozido" },
         { "id": 2, "nome": "1 colher de sopa de óleo de gergelim" },
@@ -285,7 +285,7 @@
       "tempo_preparo": "20 minutos",
       "porcoes": "2 porções",
       "dificuldade": "Fácil",
-      "refeicao": "Lanche",
+      "refeicao": "Café da manhã",
       "ingredientes": [
         { "id": 1, "nome": "200g de tteok (bolinhos de arroz)" },
         { "id": 2, "nome": "2 xícaras de caldo de anchova" },

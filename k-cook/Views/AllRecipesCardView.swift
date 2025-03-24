@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RecipeCardView: View {
+struct AllRecipesCardView: View {
     let receita: Receita
     
     var body: some View {
@@ -18,13 +18,13 @@ struct RecipeCardView: View {
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 260, height: 127)
+                            .frame(width: 352, height: 187)
                     } else if phase.error != nil {
                         Color.gray
-                            .frame(width: 260, height: 127)
+                            .frame(width: 352, height: 187)
                     } else {
                         ProgressView()
-                            .frame(width: 260, height: 127)
+                            .frame(width: 352, height: 187)
                     }
                 }
                 .clipped()
@@ -46,7 +46,7 @@ struct RecipeCardView: View {
                 }
                 .padding(10)
             }
-            .frame(width: 260, height: 127)
+            .frame(width: 352, height: 187)
             .cornerRadius(15)
             .clipped()
         }
@@ -59,7 +59,7 @@ struct RecipeCardView: View {
 
     let receitaExemplo = dataManager.receitas[1]
 
-    RecipeCardView(receita: receitaExemplo)
+    AllRecipesCardView(receita: receitaExemplo)
         .environmentObject(dataManager)
 
 }

@@ -39,8 +39,8 @@ struct HomeView: View {
 
                     VStack(alignment: .leading) {
                         HStack {
-                            Text("Receitas")
-                                .font(.title2)
+                            Text("Adicionadas Recentemente")
+                                .font(.headline)
                                 .fontWeight(.bold)
                                 .padding(.horizontal)
                             Spacer()
@@ -69,7 +69,7 @@ struct HomeView: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Text("Histórias Coreanas")
-                                .font(.title2)
+                                .font(.headline)
                                 .fontWeight(.bold)
                                 .padding(.horizontal)
                             Spacer()
