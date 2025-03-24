@@ -3,7 +3,7 @@ import SwiftUI
 struct RecipeDetailView: View {
     let receita: Receita
     @EnvironmentObject var dataManager: DataManager
-
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -20,13 +20,14 @@ struct RecipeDetailView: View {
                             .frame(height: 337)
                     }
                 }
+                
                 VStack(alignment: .leading, spacing: 20) {
                     Text(receita.nome)
                         .font(.title3)
                         .fontWeight(.bold)
                     
-                    HStack (alignment: .center, spacing: 20){
-                        VStack (alignment: .center, spacing: 5){
+                    HStack(alignment: .center, spacing: 20) {
+                        VStack(alignment: .center, spacing: 5) {
                             Image(systemName: "stopwatch")
                                 .foregroundColor(.red)
                             Text("Tempo de Preparo:")
@@ -36,7 +37,8 @@ struct RecipeDetailView: View {
                                 .font(.footnote)
                                 .fontWeight(.bold)
                         }
-                        VStack (alignment: .center, spacing: 5){
+                        
+                        VStack(alignment: .center, spacing: 5) {
                             Image(systemName: "chart.bar")
                                 .foregroundColor(.red)
                             Text("Dificuldade:")
@@ -45,8 +47,8 @@ struct RecipeDetailView: View {
                                 .font(.footnote)
                                 .fontWeight(.bold)
                         }
-
-                        VStack (alignment: .center, spacing: 5){
+                        
+                        VStack(alignment: .center, spacing: 5) {
                             Image(systemName: "fork.knife")
                                 .foregroundColor(.red)
                             Text("Porções:")
@@ -55,7 +57,8 @@ struct RecipeDetailView: View {
                                 .font(.footnote)
                                 .fontWeight(.bold)
                         }
-                        VStack (alignment: .center, spacing: 5){
+                        
+                        VStack(alignment: .center, spacing: 5) {
                             Image(systemName: "cup.and.saucer")
                                 .foregroundColor(.red)
                             Text("Refeição:")
@@ -66,28 +69,54 @@ struct RecipeDetailView: View {
                         }
                     }
                     .cornerRadius(8)
-
+                    
                     DoramasSection(doramaIDs: receita.dorama_ids)
-
+                    
                     IngredientsSection(ingredientes: receita.ingredientes)
-
+                    
                     PreparationSection(passos: receita.preparo)
                 }
+                .padding()
             }
-            .padding()
         }
         .navigationTitle(receita.nome)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            // Botão Voltar
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    // Ação de voltar já implementada
+                } label: {
+                    Label("Voltar", systemImage: "arrow.left")
+                }
+            }
+            
+            ToolbarItem(placement: .topBarTrailing) {
+                HStack(spacing: 16) {
+                    // Botão Favorito
+                    Button {
+                        // Implementação futura
+                    } label: {
+                        Image(systemName: "heart")
+                            .font(.system(size: 20))
+                            .foregroundColor(.red)
+                    }
+                    
+                    ShareLink(item: receita.nome) {
+                        Image(systemName: "square.and.arrow.up")
+                            .font(.system(size: 20))
+                            .foregroundColor(.red)
+                    }
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    let dataManager = DataManager()
-
-    dataManager.loadData()
-
-    let receitaExemplo = dataManager.receitas[1]
-
-    return RecipeDetailView(receita: receitaExemplo)
-        .environmentObject(dataManager)
-
+    NavigationStack {
+        RecipeDetailView(receita: DataManager().receitas[1])
+            .environmentObject(DataManager())
+    }
 }
