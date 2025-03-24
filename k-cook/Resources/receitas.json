@@ -1,4 +1,82 @@
 {
+  "historias": [
+    {
+      "id": 1,
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Soldiers_from_the_Un%27y%C5%8D_attacking_the_Yeongjong_castle_on_a_Korean_island_%28woodblock_print%2C_1876%29.jpg/600px-Soldiers_from_the_Un%27y%C5%8D_attacking_the_Yeongjong_castle_on_a_Korean_island_%28woodblock_print%2C_1876%29.jpg",
+      "titulo": "Ocupação Japonesa (1910–1945): A Resistência na Panela",
+      "descricao": "Durante a ocupação japonesa, a Coreia viu sua cultura ser suprimida, mas a culinária tornou-se um ato silencioso de resistência. O kimbap surgiu como uma adaptação do sushi japonês, substituindo o vinagre por óleo de gergelim e usando ingredientes locais como kimchi. Já o tteokbokki, antes um prato real suave, ganhou pimenta (gochujang) como símbolo de identidade coreana. Até o patbingsu, uma raspadinha com feijão doce, foi uma resposta ao kakigori japonês, mas com um toque único coreano. Esses pratos eram vendidos em mercados clandestinos, onde a cultura coreana sobrevivia em segredo.",
+      "pratos_relacionados": [
+        {
+          "nome": "Kimbap",
+          "motivo": "Adaptação do sushi japonês com ingredientes locais como resistência cultural.",
+          "detalhes_adicionais": "Usava óleo de gergelim e kimchi para substituir o vinagre e o peixe cru."
+        },
+        {
+          "nome": "Tteokbokki",
+          "motivo": "Adoção do gochujang para afirmar identidade contra a culinária japonesa.",
+          "detalhes_adicionais": "Popularizado em mercados negros durante a ocupação."
+        }
+      ],
+      "receitas_relacionadas": [1, 6]
+    },
+    {
+      "id": 2,
+      "titulo": "Guerra da Coreia (1950–1953): A Criatividade do Desespero",
+      "imagem": "https://ichef.bbci.co.uk/ace/ws/640/amz/worldservice/live/assets/images/2013/07/26/130726124904_4_korea_afp.jpg.webp",
+      "descricao": "A guerra trouxe fome e destruição, mas também criatividade. O budae jjigae nasceu próximo a bases militares dos EUA, misturando rações americanas (salsicha, spam) com kimchi. O kimchi jjigae era feito com kimchi fermentado há anos, um recurso para sobreviver ao inverno rigoroso. Refugiados do norte trouxeram o naengmyeon para o sul, adaptando-o ao clima quente com caldo gelado. Esses pratos eram mais que comida: eram símbolos de esperança em meio ao caos.",
+      "pratos_relacionados": [
+        {
+          "nome": "Budae Jjigae",
+          "motivo": "Criado com rações militares dos EUA e ingredientes locais.",
+          "detalhes_adicionais": "Hoje é servido em panelas que imitam tigelas militares."
+        },
+        {
+          "nome": "Kimchi Jjigae",
+          "motivo": "Usava kimchi velho e sobras para alimentar famílias e soldados.",
+          "detalhes_adicionais": "Soldados carregavam kimchi em latas para as trincheiras."
+        }
+      ],
+      "receitas_relacionadas": [3, 10]
+    },
+    {
+      "id": 3,
+      "imagem":"https://s2.glbimg.com/JlZwQEB-lKEM1fV9AmOZMUnVS1M=/620x465/s.glbimg.com/jo/g1/f/original/2015/11/28/songdo_03.jpg",
+      "titulo": "Crescimento Econômico (Anos 1980): A Comida da Prosperidade",
+      "descricao": "Nos anos 1980, a Coreia do Sul floresceu economicamente, e a comida refletiu essa mudança. O samgyeopsal, churrasco de barriga de porco, virou símbolo da nova classe média, consumido em restaurantes all-you-can-eat. O jjajangmyeon, macarrão com molho de feijão preto, era a refeição rápida dos operários que construíam Seul. Nas ruas, estudantes protestavam contra a ditadura com tteokbokki nas mãos – um prato que ganhou sabor revolucionário.",
+      "pratos_relacionados": [
+        {
+          "nome": "Samgyeopsal",
+          "motivo": "Representava a ascensão da classe média e a cultura de comunhão.",
+          "detalhes_adicionais": "Servido com folhas de alface e molho ssamjang."
+        },
+        {
+          "nome": "Tteokbokki",
+          "motivo": "Ícone de protestos estudantis pela democracia.",
+          "detalhes_adicionais": "Vendido em barracas de rua durante manifestações."
+        }
+      ],
+      "receitas_relacionadas": [6, 7]
+    },
+    {
+      "id": 4,
+      "imagem": "https://outraspalavras.net/wp-content/uploads/2020/07/200727-KPop2.jpg",
+      "titulo": "Globalização (Anos 2000–Hoje): A Hallyu à Mesa",
+      "descricao": "Com a Hallyu, a cultura coreana conquistou o mundo, e a comida não ficou para trás. O budae jjigae ganhou versões gourmet em Nova York, com queijo derretido e ramen. O samgyeopsal viralizou no TikTok, mostrando o ritual de grelhar carne. Até o patbingsu, antes uma simples raspadinha, virou obra de arte em cafés chiques, com frutas exóticas e matcha. A comida coreana, outrora símbolo de resistência, hoje é sinônimo de inovação.",
+      "pratos_relacionados": [
+        {
+          "nome": "Budae Jjigae",
+          "motivo": "Transformado em prato gourmet em restaurantes globais.",
+          "detalhes_adicionais": "Inclui ingredientes modernos como queijo e macarrão ramen."
+        },
+        {
+          "nome": "Patbingsu",
+          "motivo": "Adaptado para o paladar global com ingredientes luxuosos.",
+          "detalhes_adicionais": "Versões incluem manga, matcha e leite condensado francês."
+        }
+      ],
+      "receitas_relacionadas": [9, 10]
+    }
+  ],
   "doramas": [
     {
       "id": 1,

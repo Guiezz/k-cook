@@ -1,61 +1,85 @@
+//
+//  HistoryCardView.swift
+//  k-cook
+//
+//  Created by User on 24/03/25.
+//
+
 import SwiftUI
 
 struct HistoryCardView: View {
-    let historia: Historias // Corrigido para "Historias"
+    let historia: Historias
     @State private var showingDetail = false
 
     var body: some View {
-        Button(action: {
-            showingDetail = true
-        }) {
-            ZStack(alignment: .bottomLeading) {
-                // Use uma imagem padrão ou remova o AsyncImage se não houver URL de imagem
-                Color.gray
-                    .frame(width: 319, height: 353)
-                
-                Rectangle()
-                    .fill(LinearGradient(
-                        gradient: Gradient(colors: [.clear, .black.opacity(0.5)]),
-                        startPoint: .top,
-                        endPoint: .bottom
-                    ))
-                
-                VStack(alignment: .leading) {
-                    Text(historia.titulo)
-                        .font(.headline)
-                        .foregroundColor(.white)
+        Button(
+            action: {
+                showingDetail = true
+            },
+            label: {
+                ZStack(alignment: .bottomLeading) {
+                    AsyncImage(url: URL(string: historia.imagem)) { phase in
+                        if let image = phase.image {
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 319, height: 353)
+                        } else if phase.error != nil {
+                            Color.gray
+                                .frame(width: 319, height: 353)
+                        } else {
+                            ProgressView()
+                                .frame(width: 319, height: 353)
+                        }
+                    }
+                    .clipped()
+                    Rectangle()
+                        .fill(
+                            LinearGradient(
+                                gradient: Gradient(colors: [
+                                    .clear, .black.opacity(0.5)
+                                ]),
+                                startPoint: .top,
+                                endPoint: .bottom
+                            ))
+                    VStack(alignment: .leading) {
+                        Text(historia.titulo)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                    }
+                    .padding(10)
                 }
-                .padding(10)
+                .frame(width: 319, height: 353)
+                .cornerRadius(14)
+                .clipped()
             }
-            .frame(width: 319, height: 353)
-            .cornerRadius(14)
-            .clipped()
-        }
+        )
         .buttonStyle(PlainButtonStyle())
-        .sheet(isPresented: $showingDetail) {
-            // Substitua pelo detalhe da história, se necessário
-            Text("Detalhe da História")
-        }
+        .sheet(
+            isPresented: $showingDetail,
+            content: {
+                HistoryCardSheet(historia: historia)
+            })
     }
 }
 
 struct HistoryCardSheet: View {
     let historia: Historias
     @Environment(\.dismiss) var dismiss
-    
     var body: some View {
         NavigationStack {
-            // Substitua pelo detalhe da história, se necessário
-            Text("Detalhe da História: \(historia.titulo)")
+            HistoryDetailView(historia: historia)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image(systemName: "xmark.circle.fill")
-                                .foregroundColor(.gray)
-                        }
+                        Button(
+                            action: {
+                                dismiss()
+                            },
+                            label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundColor(.gray)
+                            })
                     }
                 }
         }
@@ -63,21 +87,13 @@ struct HistoryCardSheet: View {
 }
 
 #Preview {
-    // Exemplo estático para o preview
-    let historiaExemplo = Historias(
-        id: 1,
-        titulo: "Ocupação Japonesa (1910–1945): A Resistência na Panela",
-        descricao: "Durante a ocupação japonesa...",
-        pratos_relacionados: [
-            PratoRelacionado(
-                nome: "Kimbap",
-                motivo: "Adaptação do sushi japonês...",
-                detalhes_adicionais: "Usava óleo de gergelim..."
-            )
-        ],
-        receitas_relacionadas: [1]
-    )
-    
-    return HistoryCardView(historia: historiaExemplo)
-        .environmentObject(DataManager())
+    let dataManager = DataManager()
+
+    dataManager.loadData()
+
+    let receitaExemplo = dataManager.historias[3]
+
+    return HistoryCardView(historia: receitaExemplo)
+        .environmentObject(dataManager)
+
 }
