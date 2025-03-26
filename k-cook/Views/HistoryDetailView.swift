@@ -5,13 +5,13 @@ struct HistoryDetailView: View {
     @EnvironmentObject var dataManager: DataManager
     @Environment(\.dismiss) var dismiss
     @State private var selectedReceita: Receita?
-
+    
     private var receitasRelacionadas: [Receita] {
         dataManager.receitas.filter {
             historia.receitas_relacionadas.contains($0.id)
         }
     }
-
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -33,16 +33,23 @@ struct HistoryDetailView: View {
                                 .frame(height: 300)
                         }
                     }
-
+                    
+                    
                     Text(historia.titulo)
                         .font(.title)
                         .fontWeight(.bold)
-
+                    
+                    
                     Text(historia.descricao)
                         .font(.body)
                         .foregroundStyle(.secondary)
+                    
+                    
                     if !receitasRelacionadas.isEmpty {
                         VStack(alignment: .leading, spacing: 12) {
+                            Text("Receitas Relacionadas")
+                                .font(.headline)
+                            
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 15) {
                                     ForEach(receitasRelacionadas) { receita in
@@ -56,11 +63,14 @@ struct HistoryDetailView: View {
                             }
                         }
                     }
-
+                    
                     Spacer(minLength: 20)
                 }
                 .padding()
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .presentationDragIndicator(.visible)
+            .toolbar(.hidden, for: .navigationBar)
         }
     }
 }
