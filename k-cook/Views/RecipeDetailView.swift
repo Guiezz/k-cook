@@ -1,115 +1,88 @@
 import SwiftUI
 
 struct RecipeDetailView: View {
-    let receita: Receita
+    let receitaOriginal: Receita
     @EnvironmentObject var dataManager: DataManager
-    
+    @State private var isFavorited: Bool
+
+    init(receita: Receita) {
+        self.receitaOriginal = receita
+        _isFavorited = State(initialValue: receita.isFavorited)
+    }
+
     var body: some View {
         ScrollView {
             VStack {
-                AsyncImage(url: URL(string: receita.imagem)) { phase in
+                AsyncImage(url: URL(string: receitaOriginal.imagem)) { phase in
                     if let image = phase.image {
-                        image
-                            .resizable()
-                            .scaledToFit()
+                        image.resizable().scaledToFit()
                     } else if phase.error != nil {
-                        Color.gray
-                            .frame(height: 337)
+                        Color.gray.frame(height: 337)
                     } else {
-                        ProgressView()
-                            .frame(height: 337)
+                        ProgressView().frame(height: 337)
                     }
                 }
-                
+
                 VStack(alignment: .leading, spacing: 20) {
-                    Text(receita.nome)
+                    Text(receitaOriginal.nome)
                         .font(.title3)
                         .fontWeight(.bold)
-                    
+
                     HStack(alignment: .center, spacing: 20) {
-                        VStack(alignment: .center, spacing: 5) {
-                            Image(systemName: "stopwatch")
-                                .foregroundColor(.red)
-                            Text("Tempo de Preparo:")
-                                .font(.caption)
-                                .multilineTextAlignment(.center)
-                            Text(receita.tempo_preparo)
-                                .font(.footnote)
-                                .fontWeight(.bold)
-                        }
-                        
-                        VStack(alignment: .center, spacing: 5) {
-                            Image(systemName: "chart.bar")
-                                .foregroundColor(.red)
-                            Text("Dificuldade:")
-                                .font(.caption)
-                            Text(receita.dificuldade)
-                                .font(.footnote)
-                                .fontWeight(.bold)
-                        }
-                        
-                        VStack(alignment: .center, spacing: 5) {
-                            Image(systemName: "fork.knife")
-                                .foregroundColor(.red)
-                            Text("Porções:")
-                                .font(.caption)
-                            Text(receita.porcoes)
-                                .font(.footnote)
-                                .fontWeight(.bold)
-                        }
-                        
-                        VStack(alignment: .center, spacing: 5) {
-                            Image(systemName: "cup.and.saucer")
-                                .foregroundColor(.red)
-                            Text("Refeição:")
-                                .font(.caption)
-                            Text(receita.refeicao)
-                                .font(.footnote)
-                                .fontWeight(.bold)
-                        }
+                        InfoBox(icon: "stopwatch", title: "Tempo de Preparo:", value: receitaOriginal.tempo_preparo)
+                        InfoBox(icon: "chart.bar", title: "Dificuldade:", value: receitaOriginal.dificuldade)
+                        InfoBox(icon: "fork.knife", title: "Porções:", value: receitaOriginal.porcoes)
+                        InfoBox(icon: "cup.and.saucer", title: "Refeição:", value: receitaOriginal.refeicao)
                     }
-                    .cornerRadius(8)
-                    
-                    DoramasSection(doramaIDs: receita.dorama_ids)
-                    
-                    IngredientsSection(ingredientes: receita.ingredientes)
-                    
-                    PreparationSection(passos: receita.preparo)
+
+                    DoramasSection(doramaIDs: receitaOriginal.dorama_ids)
+                    IngredientsSection(ingredientes: receitaOriginal.ingredientes)
+                    PreparationSection(passos: receitaOriginal.preparo)
                 }
                 .padding()
             }
         }
-        .navigationTitle(receita.nome)
+        .navigationTitle(receitaOriginal.nome)
         .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
         .toolbar {
-            // Botão Voltar
-            ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    // Ação de voltar já implementada
-                } label: {
-                    Label("Voltar", systemImage: "arrow.left")
-                }
-            }
-            
             ToolbarItem(placement: .topBarTrailing) {
                 HStack(spacing: 16) {
-                    // Botão Favorito
                     Button {
-                        // Implementação futura
+                        dataManager.toggleFavorito(receitaId: receitaOriginal.id)
+                        isFavorited.toggle()
                     } label: {
-                        Image(systemName: "heart")
+                        Image(systemName: isFavorited ? "heart.fill" : "heart")
                             .font(.system(size: 20))
                             .foregroundColor(.red)
                     }
-                    
-                    ShareLink(item: receita.nome) {
+
+                    ShareLink(item: receitaOriginal.nome) {
                         Image(systemName: "square.and.arrow.up")
                             .font(.system(size: 20))
                             .foregroundColor(.red)
                     }
                 }
             }
+        }
+    }
+}
+
+// Componente auxiliar para exibir as informações da receita
+struct InfoBox: View {
+    let icon: String
+    let title: String
+    let value: String
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 5) {
+            Image(systemName: icon)
+                .foregroundColor(.red)
+            Text(title)
+                .font(.caption)
+                .multilineTextAlignment(.center)
+            Text(value)
+                .font(.footnote)
+                .fontWeight(.bold)
         }
     }
 }

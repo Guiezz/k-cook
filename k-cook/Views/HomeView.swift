@@ -20,7 +20,6 @@ struct HomeView: View {
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.red)
-
                         }
                         .padding(.horizontal)
 
@@ -88,13 +87,49 @@ struct HomeView: View {
                         }
                     }
                     .padding(.vertical)
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Receitas Favoritas")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .padding(.horizontal)
+                            Spacer()
+                        }
+
+                        if dataManager.receitas.contains(where: {
+                            $0.isFavorited
+                        }) {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 15) {
+                                    ForEach(
+                                        dataManager.receitas.filter {
+                                            $0.isFavorited
+                                        }
+                                    ) { receita in
+                                        RecipeCardView(receita: receita)
+                                            .onTapGesture {
+                                                selectedReceita = receita
+                                            }
+                                    }
+                                }
+                                .padding(.horizontal)
+                            }
+                        } else {
+                            Text("Nenhuma receita favoritada ainda.")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                                .padding(.horizontal)
+                        }
+                    }
+                    .padding(.top)
+
                 }
                 .padding(25)
             }
             .onAppear {
                 updateDailyRecipe()
             }
-            .onReceive(dataManager.$receitas) { t in
+            .onReceive(dataManager.$receitas) { _ in
                 updateDailyRecipe()
             }
         }

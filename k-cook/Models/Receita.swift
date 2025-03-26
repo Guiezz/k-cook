@@ -1,11 +1,3 @@
-//
-//  Receita.swift
-//  k-cook
-//
-//  Created by User on 20/03/25.
-//
-
-
 struct Receita: Codable, Identifiable {
     let id: Int
     let nome: String
@@ -17,4 +9,18 @@ struct Receita: Codable, Identifiable {
     let ingredientes: [Ingrediente]
     let preparo: [PassoPreparo]
     let imagem: String
+    var isFavorited: Bool = false
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case nome
+        case dorama_ids
+        case tempo_preparo
+        case porcoes
+        case dificuldade
+        case refeicao
+        case ingredientes
+        case preparo
+        case imagem
+    }
 }
