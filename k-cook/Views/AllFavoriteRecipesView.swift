@@ -3,6 +3,7 @@ import SwiftUI
 struct AllFavoriteRecipesView: View {
     @EnvironmentObject var dataManager: DataManager
     @State private var selectedReceita: Receita?
+    @Environment(\.dismiss) private var dismiss
 
     
     var favoritos: [Receita] {
@@ -11,9 +12,6 @@ struct AllFavoriteRecipesView: View {
 
     var body: some View {
         VStack {
-
-
-            // Lista de Favoritos
             if favoritos.isEmpty {
                 VStack(spacing: 10) {
                     Image(systemName: "heart.slash.fill")
@@ -49,8 +47,18 @@ struct AllFavoriteRecipesView: View {
                 }
             }
         }
-        .navigationTitle("Receitas Favoritas")
+        .navigationTitle("Receitas Favoritas ")
         .navigationBarTitleDisplayMode(.large)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Label("Back", systemImage: "arrow.left")
+                }
+            }
+        }
     }
 }
 

@@ -20,10 +20,10 @@ struct RecipeCardView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 260, height: 127)
                     } else if phase.error != nil {
-                        Color.gray
+                        ProgressView()
                             .frame(width: 260, height: 127)
                     } else {
-                        ProgressView()
+                        Color.gray
                             .frame(width: 260, height: 127)
                     }
                 }

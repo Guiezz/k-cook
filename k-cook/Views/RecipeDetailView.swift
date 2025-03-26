@@ -4,6 +4,7 @@ struct RecipeDetailView: View {
     let receitaOriginal: Receita
     @EnvironmentObject var dataManager: DataManager
     @State private var isFavorited: Bool
+    @Environment(\.dismiss) private var dismiss
 
     init(receita: Receita) {
         self.receitaOriginal = receita
@@ -29,14 +30,23 @@ struct RecipeDetailView: View {
                         .fontWeight(.bold)
 
                     HStack(alignment: .center, spacing: 20) {
-                        InfoBox(icon: "stopwatch", title: "Tempo de Preparo:", value: receitaOriginal.tempo_preparo)
-                        InfoBox(icon: "chart.bar", title: "Dificuldade:", value: receitaOriginal.dificuldade)
-                        InfoBox(icon: "fork.knife", title: "Porções:", value: receitaOriginal.porcoes)
-                        InfoBox(icon: "cup.and.saucer", title: "Refeição:", value: receitaOriginal.refeicao)
+                        InfoBox(
+                            icon: "stopwatch", title: "Tempo de Preparo:",
+                            value: receitaOriginal.tempo_preparo)
+                        InfoBox(
+                            icon: "chart.bar", title: "Dificuldade:",
+                            value: receitaOriginal.dificuldade)
+                        InfoBox(
+                            icon: "fork.knife", title: "Porções:",
+                            value: receitaOriginal.porcoes)
+                        InfoBox(
+                            icon: "cup.and.saucer", title: "Refeição:",
+                            value: receitaOriginal.refeicao)
                     }
 
                     DoramasSection(doramaIDs: receitaOriginal.dorama_ids)
-                    IngredientsSection(ingredientes: receitaOriginal.ingredientes)
+                    IngredientsSection(
+                        ingredientes: receitaOriginal.ingredientes)
                     PreparationSection(passos: receitaOriginal.preparo)
                 }
                 .padding()
@@ -44,11 +54,21 @@ struct RecipeDetailView: View {
         }
         .navigationTitle(receitaOriginal.nome)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Label("Back", systemImage: "arrow.left")
+                }
+            }
+
             ToolbarItem(placement: .topBarTrailing) {
                 HStack(spacing: 16) {
                     Button {
-                        dataManager.toggleFavorito(receitaId: receitaOriginal.id)
+                        dataManager.toggleFavorito(
+                            receitaId: receitaOriginal.id)
                         isFavorited.toggle()
                     } label: {
                         Image(systemName: isFavorited ? "heart.fill" : "heart")
@@ -67,12 +87,11 @@ struct RecipeDetailView: View {
     }
 }
 
-// Componente auxiliar para exibir as informações da receita
 struct InfoBox: View {
     let icon: String
     let title: String
     let value: String
-    
+
     var body: some View {
         VStack(alignment: .center, spacing: 5) {
             Image(systemName: icon)

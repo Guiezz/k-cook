@@ -90,17 +90,24 @@ struct HomeView: View {
 
                     VStack(alignment: .leading) {
                         HStack {
-                            Text("Receitas Favoritas ")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                                .padding(.horizontal)
+                            HStack(spacing: 4) {
+                                Text("Receitas Favoritas")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                Image(systemName: "heart.fill")
+                                    .foregroundColor(.red)
+                                    .padding(.leading, 0)
+                            }
+                            .padding(.horizontal)
 
                             Spacer()
 
                             if dataManager.receitas.contains(where: {
                                 $0.isFavorited
                             }) {
-                                NavigationLink(destination: AllFavoriteRecipesView()) {
+                                NavigationLink(
+                                    destination: AllFavoriteRecipesView()
+                                ) {
                                     Text("Ver tudo")
                                         .foregroundColor(.red)
                                         .font(.callout)
