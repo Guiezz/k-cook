@@ -87,13 +87,26 @@ struct HomeView: View {
                         }
                     }
                     .padding(.vertical)
+
                     VStack(alignment: .leading) {
                         HStack {
-                            Text("Receitas Favoritas")
+                            Text("Receitas Favoritas ")
                                 .font(.headline)
                                 .fontWeight(.bold)
                                 .padding(.horizontal)
+
                             Spacer()
+
+                            if dataManager.receitas.contains(where: {
+                                $0.isFavorited
+                            }) {
+                                NavigationLink(destination: AllFavoriteRecipesView()) {
+                                    Text("Ver tudo")
+                                        .foregroundColor(.red)
+                                        .font(.callout)
+                                        .padding(.horizontal)
+                                }
+                            }
                         }
 
                         if dataManager.receitas.contains(where: {
@@ -124,7 +137,7 @@ struct HomeView: View {
                     .padding(.top)
 
                 }
-                .padding(25)
+                .padding(16)
             }
             .onAppear {
                 updateDailyRecipe()

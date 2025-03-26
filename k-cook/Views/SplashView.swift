@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct SplashView: View {
+    @State private var isActive = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+        if isActive {
+            HomeView()
+                .environmentObject(DataManager())
+        } else {
+            ZStack {
+                Color.black
+                    .edgesIgnoringSafeArea(.all)
+                Image("KcookLogo")
+            }
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    withAnimation {
+                        self.isActive = true
+                    }
+                }
+            }
+        }
     }
 }
 
