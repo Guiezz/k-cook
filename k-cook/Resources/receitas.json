@@ -144,268 +144,369 @@
     }
   ],
   "receitas": [
-    {
-      "id": 1,
-      "nome": "Kimbap",
-      "dorama_ids": [1, 2],
-      "tempo_preparo": "30 minutos",
-      "porcoes": "4 porções",
-      "dificuldade": "Média",
-      "refeicao": "Café da manhã",
-      "ingredientes": [
-        { "id": 1, "nome": "2 xícaras de arroz cozido" },
-        { "id": 2, "nome": "1 colher de sopa de óleo de gergelim" },
-        { "id": 3, "nome": "1 colher de chá de sal" },
-        { "id": 4, "nome": "4 folhas de alga nori" },
-        { "id": 5, "nome": "1 cenoura cortada em tiras finas" },
-        { "id": 6, "nome": "1 pepino cortado em tiras" },
-        { "id": 7, "nome": "4 fatias de presunto ou kani" },
-        { "id": 8, "nome": "2 ovos mexidos em tiras" },
-        { "id": 9, "nome": "Gergelim para polvilhar" }
-      ],
-      "preparo": [
-        { "id": 1, "passo": "Misture o arroz cozido com óleo de gergelim e sal." },
-        { "id": 2, "passo": "Disponha uma folha de nori sobre uma esteira de bambu." },
-        { "id": 3, "passo": "Espalhe uma camada fina de arroz sobre a alga." },
-        { "id": 4, "passo": "Coloque os recheios (cenoura, pepino, presunto, ovo) no centro." },
-        { "id": 5, "passo": "Enrole firmemente com a ajuda da esteira." },
-        { "id": 6, "passo": "Corte em fatias e polvilhe gergelim." }
-      ],
-      "imagem": "https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2023/09/22/788421434-tamanho-padrao-gc-64.jpg"
-    },
-    {
-      "id": 2,
-      "nome": "Naengmyeon",
-      "dorama_ids": [3, 4],
-      "tempo_preparo": "25 minutos",
-      "porcoes": "2 porções",
-      "dificuldade": "Fácil",
-      "refeicao": "Almoço",
-      "ingredientes": [
-        { "id": 1, "nome": "200g de macarrão para naengmyeon" },
-        { "id": 2, "nome": "2 xícaras de caldo de carne gelado" },
-        { "id": 3, "nome": "1/2 pepino cortado em tiras" },
-        { "id": 4, "nome": "1 ovo cozido" },
-        { "id": 5, "nome": "1 colher de chá de vinagre" },
-        { "id": 6, "nome": "1 colher de chá de mostarda" },
-        { "id": 7, "nome": "Gelo a gosto" }
-      ],
-      "preparo": [
-        { "id": 1, "passo": "Cozinhe o macarrão conforme as instruções e enxágue com água gelada." },
-        { "id": 2, "passo": "Prepare o caldo de carne e deixe na geladeira até esfriar." },
-        { "id": 3, "passo": "Monte o prato colocando o macarrão, o caldo e os ingredientes por cima." },
-        { "id": 4, "passo": "Finalize com gelo para manter gelado." }
-      ],
-      "imagem": "https://i0.wp.com/www.angsarap.net/wp-content/uploads/2023/03/Naengmyeon-Wide.jpg?ssl=1"
-    },
-    {
-      "id": 3,
-      "nome": "Kimchi Jjigae",
-      "dorama_ids": [5, 6],
-      "tempo_preparo": "40 minutos",
-      "porcoes": "3 porções",
-      "dificuldade": "Média",
-      "refeicao": "Jantar",
-      "ingredientes": [
-        { "id": 1, "nome": "2 xícaras de kimchi" },
-        { "id": 2, "nome": "200g de carne de porco em tiras" },
-        { "id": 3, "nome": "1 colher de sopa de pasta de pimenta (gochujang)" },
-        { "id": 4, "nome": "2 xícaras de água" },
-        { "id": 5, "nome": "1 tofu cortado em cubos" },
-        { "id": 6, "nome": "1 cebola fatiada" },
-        { "id": 7, "nome": "2 dentes de alho picados" },
-        { "id": 8, "nome": "Cebolinha para decorar" }
-      ],
-      "preparo": [
-        { "id": 1, "passo": "Refogue o kimchi e a carne de porco em uma panela." },
-        { "id": 2, "passo": "Adicione a pasta de pimenta e misture bem." },
-        { "id": 3, "passo": "Despeje a água e deixe ferver por 15 minutos." },
-        { "id": 4, "passo": "Adicione o tofu e a cebola, cozinhando por mais 5 minutos." },
-        { "id": 5, "passo": "Finalize com cebolinha picada." }
-      ],
-      "imagem": "https://www.koreanbapsang.com/wp-content/uploads/2014/03/DSC_5089-3.jpg"
-    },
-    {
-      "id": 4,
-      "nome": "Sundubu Jjigae",
-      "dorama_ids": [7, 8],
-      "tempo_preparo": "35 minutos",
-      "porcoes": "2 porções",
-      "dificuldade": "Média",
-      "refeicao": "Jantar",
-      "ingredientes": [
-        { "id": 1, "nome": "200g de tofu mole" },
-        { "id": 2, "nome": "1 xícara de kimchi" },
-        { "id": 3, "nome": "100g de carne moída ou frutos do mar" },
-        { "id": 4, "nome": "1 colher de sopa de pasta de pimenta (gochujang)" },
-        { "id": 5, "nome": "2 xícaras de caldo de anchova" },
-        { "id": 6, "nome": "1 ovo" },
-        { "id": 7, "nome": "1 cebola fatiada" },
-        { "id": 8, "nome": "2 dentes de alho picados" },
-        { "id": 9, "nome": "Cebolinha para decorar" }
-      ],
-      "preparo": [
-        { "id": 1, "passo": "Refogue a carne moída, kimchi e alho em uma panela." },
-        { "id": 2, "passo": "Adicione a pasta de pimenta e o caldo de anchova, deixando ferver por 10 minutos." },
-        { "id": 3, "passo": "Adicione o tofu mole e cozinhe por mais 5 minutos." },
-        { "id": 4, "passo": "Quebre o ovo diretamente na panela e cozinhe até que a clara esteja firme." },
-        { "id": 5, "passo": "Finalize com cebolinha picada." }
-      ],
-      "imagem": "https://www.theminichef.com/wp-content/uploads/2020/10/sundubu-jjigae-1.jpg"
-    },
-    {
-      "id": 5,
-      "nome": "Jjajangmyeon",
-      "dorama_ids": [2, 9],
-      "tempo_preparo": "40 minutos",
-      "porcoes": "3 porções",
-      "dificuldade": "Média",
-      "refeicao": "Almoço",
-      "ingredientes": [
-        { "id": 1, "nome": "300g de macarrão jjajangmyeon" },
-        { "id": 2, "nome": "200g de carne de porco em cubos" },
-        { "id": 3, "nome": "1 xícara de molho de feijão preto (chunjang)" },
-        { "id": 4, "nome": "1 cebola grande fatiada" },
-        { "id": 5, "nome": "1 batata cortada em cubos" },
-        { "id": 6, "nome": "1 abobrinha cortada em cubos" },
-        { "id": 7, "nome": "1 colher de sopa de óleo" },
-        { "id": 8, "nome": "1 colher de chá de açúcar" },
-        { "id": 9, "nome": "1 xícara de água" }
-      ],
-      "preparo": [
-        { "id": 1, "passo": "Cozinhe o macarrão conforme as instruções e reserve." },
-        { "id": 2, "passo": "Refogue a carne de porco em óleo até dourar." },
-        { "id": 3, "passo": "Adicione a cebola, batata e abobrinha, refogando até ficarem macios." },
-        { "id": 4, "passo": "Misture o molho de feijão preto e o açúcar, cozinhando por 5 minutos." },
-        { "id": 5, "passo": "Adicione a água e deixe ferver até engrossar." },
-        { "id": 6, "passo": "Sirva o molho sobre o macarrão." }
-      ],
-      "imagem": "https://www.maangchi.com/wp-content/uploads/2007/07/jjajangmyeon-plate.jpg"
-    },
-    {
-      "id": 6,
-      "nome": "Tteokbokki",
-      "dorama_ids": [8, 4],
-      "tempo_preparo": "20 minutos",
-      "porcoes": "2 porções",
-      "dificuldade": "Fácil",
-      "refeicao": "Café da manhã",
-      "ingredientes": [
-        { "id": 1, "nome": "200g de tteok (bolinhos de arroz)" },
-        { "id": 2, "nome": "2 xícaras de caldo de anchova" },
-        { "id": 3, "nome": "2 colheres de sopa de pasta de pimenta (gochujang)" },
-        { "id": 4, "nome": "1 colher de sopa de açúcar" },
-        { "id": 5, "nome": "1 colher de sopa de molho de soja" },
-        { "id": 6, "nome": "1 cebola fatiada" },
-        { "id": 7, "nome": "1 ovo cozido (opcional)" },
-        { "id": 8, "nome": "Cebolinha para decorar" }
-      ],
-      "preparo": [
-        { "id": 1, "passo": "Misture o caldo, a pasta de pimenta, o açúcar e o molho de soja em uma panela." },
-        { "id": 2, "passo": "Adicione os bolinhos de arroz e a cebola, cozinhando até o molho engrossar." },
-        { "id": 3, "passo": "Decore com cebolinha e ovo cozido, se desejar." }
-      ],
-      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tteokbokki.JPG/1200px-Tteokbokki.JPG"
-    },
-    {
-      "id": 7,
-      "nome": "Samgyeopsal",
-      "dorama_ids": [6, 10],
-      "tempo_preparo": "30 minutos",
-      "porcoes": "4 porções",
-      "dificuldade": "Fácil",
-      "refeicao": "Jantar",
-      "ingredientes": [
-        { "id": 1, "nome": "500g de barriga de porco em fatias" },
-        { "id": 2, "nome": "Alface para enrolar" },
-        { "id": 3, "nome": "Pasta de alho" },
-        { "id": 4, "nome": "Molho ssamjang" },
-        { "id": 5, "nome": "Kimchi" },
-        { "id": 6, "nome": "Cebolinha picada" }
-      ],
-      "preparo": [
-        { "id": 1, "passo": "Grelhe as fatias de barriga de porco em uma chapa ou frigideira." },
-        { "id": 2, "passo": "Sirva com alface, pasta de alho, molho ssamjang e kimchi." },
-        { "id": 3, "passo": "Enrole a carne e os acompanhamentos na alface e aproveite." }
-      ],
-      "imagem": "https://marcwiner.com/wp-content/uploads/2024/11/Samgyeopsal-en-tete.webp"
-    },
-    {
-      "id": 8,
-      "nome": "Japchae",
-      "dorama_ids": [10, 3],
-      "tempo_preparo": "40 minutos",
-      "porcoes": "4 porções",
-      "dificuldade": "Média",
-      "refeicao": "Almoço",
-      "ingredientes": [
-        { "id": 1, "nome": "200g de macarrão de batata-doce (dangmyeon)" },
-        { "id": 2, "nome": "100g de carne em tiras" },
-        { "id": 3, "nome": "1 cenoura cortada em tiras" },
-        { "id": 4, "nome": "1 cebola fatiada" },
-        { "id": 5, "nome": "1 pimentão cortado em tiras" },
-        { "id": 6, "nome": "2 colheres de sopa de óleo de gergelim" },
-        { "id": 7, "nome": "2 colheres de sopa de molho de soja" },
-        { "id": 8, "nome": "1 colher de sopa de açúcar" },
-        { "id": 9, "nome": "Gergelim torrado para decorar" }
-      ],
-      "preparo": [
-        { "id": 1, "passo": "Cozinhe o macarrão conforme as instruções e reserve." },
-        { "id": 2, "passo": "Refogue a carne e os vegetais separadamente." },
-        { "id": 3, "passo": "Misture o macarrão com os vegetais e a carne." },
-        { "id": 4, "passo": "Tempere com óleo de gergelim, molho de soja e açúcar." },
-        { "id": 5, "passo": "Finalize com gergelim torrado." }
-      ],
-      "imagem": "https://images.getrecipekit.com/20240228032059-andy-20cooks-20-20japchae.jpg?aspect_ratio=16:9&quality=90&"
-    },
-    {
-      "id": 9,
-      "nome": "Patbingsu",
-      "dorama_ids": [9, 3],
-      "tempo_preparo": "15 minutos",
-      "porcoes": "2 porções",
-      "dificuldade": "Fácil",
-      "refeicao": "Sobremesa",
-      "ingredientes": [
-        { "id": 1, "nome": "2 xícaras de gelo raspado" },
-        { "id": 2, "nome": "1/2 xícara de doce de feijão vermelho" },
-        { "id": 3, "nome": "1/2 xícara de frutas variadas (manga, morango, kiwi)" },
-        { "id": 4, "nome": "1 colher de sopa de leite condensado" },
-        { "id": 5, "nome": "Gergelim torrado para decorar" }
-      ],
-      "preparo": [
-        { "id": 1, "passo": "Coloque o gelo raspado em uma tigela." },
-        { "id": 2, "passo": "Adicione o doce de feijão e as frutas por cima." },
-        { "id": 3, "passo": "Regue com leite condensado e finalize com gergelim torrado." }
-      ],
-      "imagem": "https://www.koreanbapsang.com/wp-content/uploads/2014/07/Patbingsu-recipe-21.jpg"
-    },
-    {
-      "id": 10,
-      "nome": "Budae Jjigae",
-      "dorama_ids": [4, 8],
-      "tempo_preparo": "30 minutos",
-      "porcoes": "3 porções",
-      "dificuldade": "Média",
-      "refeicao": "Jantar",
-      "ingredientes": [
-        { "id": 1, "nome": "2 xícaras de caldo de carne" },
-        { "id": 2, "nome": "1 xícara de kimchi" },
-        { "id": 3, "nome": "100g de salsicha" },
-        { "id": 4, "nome": "100g de presunto" },
-        { "id": 5, "nome": "1 xícara de macarrão instantâneo" },
-        { "id": 6, "nome": "1/2 xícara de tofu cortado em cubos" },
-        { "id": 7, "nome": "1 cebola fatiada" },
-        { "id": 8, "nome": "1 colher de sopa de pasta de pimenta (gochujang)" },
-        { "id": 9, "nome": "Cebolinha para decorar" }
-      ],
-      "preparo": [
-        { "id": 1, "passo": "Em uma panela, misture o caldo, kimchi, pasta de pimenta e cebola." },
-        { "id": 2, "passo": "Adicione a salsicha, o presunto e o tofu, deixando ferver por 10 minutos." },
-        { "id": 3, "passo": "Adicione o macarrão instantâneo e cozinhe até ficar macio." },
-        { "id": 4, "passo": "Finalize com cebolinha picada." }
-      ],
-      "imagem": "https://static01.nyt.com/images/2022/06/15/dining/15ESSENTIALSrex2/15ESSENTIALSrex2-threeByTwoMediumAt2X.jpg"
-    }
-  ]
+      {
+        "id": 1,
+        "nome": "Kimbap",
+        "dorama_ids": [1, 2],
+        "tempo_preparo": "30 minutos",
+        "porcoes": "4 porções",
+        "dificuldade": "Média",
+        "refeicao": "Café da manhã",
+        "descricao_curta": "O Kimbap é um prato icônico da Coreia, semelhante ao sushi japonês, mas com um toque único: o arroz é temperado com óleo de gergelim e recheado com ingredientes locais como kimchi, cenoura e ovo. Surgiu durante a ocupação japonesa como um ato silencioso de resistência cultural, substituindo o vinagre do sushi por sabores coreanos. É perfeito para lanches, piqueniques ou refeições rápidas!",
+        "ingredientes": [
+          { "id": 1, "nome": "2 xícaras de arroz cozido" },
+          { "id": 2, "nome": "1 colher de sopa de óleo de gergelim" },
+          { "id": 3, "nome": "1 colher de chá de sal" },
+          { "id": 4, "nome": "4 folhas de alga nori" },
+          { "id": 5, "nome": "1 cenoura cortada em tiras finas" },
+          { "id": 6, "nome": "1 pepino cortado em tiras" },
+          { "id": 7, "nome": "4 fatias de presunto ou kani" },
+          { "id": 8, "nome": "2 ovos mexidos em tiras" },
+          { "id": 9, "nome": "Gergelim para polvilhar" }
+        ],
+        "equipamento": ["Esteira de bambu", "Frigideira para ovos", "Faca afiada"],
+        "preparo": [
+          { "id": 1, "passo": "Misture o arroz cozido com óleo de gergelim e sal." },
+          { "id": 2, "passo": "Disponha uma folha de nori sobre uma esteira de bambu." },
+          { "id": 3, "passo": "Espalhe uma camada fina de arroz sobre a alga." },
+          { "id": 4, "passo": "Coloque os recheios (cenoura, pepino, presunto, ovo) no centro." },
+          { "id": 5, "passo": "Enrole firmemente com a ajuda da esteira." },
+          { "id": 6, "passo": "Corte em fatias e polvilhe gergelim." }
+        ],
+        "curiosidades_culturais": [
+          "Símbolo de resistência durante a ocupação japonesa (1910–1945)",
+          "Cada família coreana tem sua versão única"
+        ],
+        "dicas_truques": [
+          "Use arroz de grão curto para textura perfeita",
+          "Molhe a faca para cortes limpos"
+        ],
+        "imagem": "https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2023/09/22/788421434-tamanho-padrao-gc-64.jpg"
+      },
+      {
+        "id": 2,
+        "nome": "Naengmyeon",
+        "dorama_ids": [3, 4],
+        "tempo_preparo": "25 minutos",
+        "porcoes": "2 porções",
+        "dificuldade": "Fácil",
+        "refeicao": "Almoço",
+        "descricao_curta": "O Naengmyeon é um prato de macarrão de trigo sarraceno servido gelado, originário do norte da Coreia. Após a Guerra da Coreia (1950–1953), refugiados trouxeram a receita para o sul, onde ganhou popularidade como símbolo de resistência e adaptação. Ideal para dias quentes, combina caldo refrescante, macarrão mastigável e toppings crocantes.",
+        "ingredientes": [
+          { "id": 1, "nome": "200g de macarrão para naengmyeon" },
+          { "id": 2, "nome": "2 xícaras de caldo de carne gelado" },
+          { "id": 3, "nome": "1/2 pepino cortado em tiras" },
+          { "id": 4, "nome": "1 ovo cozido" },
+          { "id": 5, "nome": "1 colher de chá de vinagre" },
+          { "id": 6, "nome": "1 colher de chá de mostarda" },
+          { "id": 7, "nome": "Gelo a gosto" }
+        ],
+        "equipamento": ["Panela grande", "Tigelas resistentes ao frio", "Escorredor"],
+        "preparo": [
+          { "id": 1, "passo": "Cozinhe o macarrão conforme as instruções e enxágue com água gelada." },
+          { "id": 2, "passo": "Prepare o caldo de carne e deixe na geladeira até esfriar." },
+          { "id": 3, "passo": "Monte o prato colocando o macarrão, o caldo e os ingredientes por cima." },
+          { "id": 4, "passo": "Finalize com gelo para manter gelado." }
+        ],
+        "curiosidades_culturais": [
+          "Originário da Coreia do Norte, popularizado no Sul após a guerra",
+          "Era um prato nobre servido em Pyongyang"
+        ],
+        "dicas_truques": [
+          "Deixe o caldo na geladeira por um dia para intensificar o sabor",
+          "Adicione uma pitada de mostarda para um toque picante"
+        ],
+        "imagem": "https://i0.wp.com/www.angsarap.net/wp-content/uploads/2023/03/Naengmyeon-Wide.jpg?ssl=1"
+      },
+      {
+        "id": 3,
+        "nome": "Kimchi Jjigae",
+        "dorama_ids": [5, 6],
+        "tempo_preparo": "40 minutos",
+        "porcoes": "3 porções",
+        "dificuldade": "Média",
+        "refeicao": "Jantar",
+        "descricao_curta": "Um ensopado picante e reconfortante feito com kimchi fermentado, carne de porco e tofu. Surgiu durante a Guerra da Coreia, quando famílias usavam kimchi velho e sobras para alimentar soldados. Hoje, é um prato nacional que aquece corações e lares.",
+        "ingredientes": [
+          { "id": 1, "nome": "2 xícaras de kimchi" },
+          { "id": 2, "nome": "200g de carne de porco em tiras" },
+          { "id": 3, "nome": "1 colher de sopa de pasta de pimenta (gochujang)" },
+          { "id": 4, "nome": "2 xícaras de água" },
+          { "id": 5, "nome": "1 tofu cortado em cubos" },
+          { "id": 6, "nome": "1 cebola fatiada" },
+          { "id": 7, "nome": "2 dentes de alho picados" },
+          { "id": 8, "nome": "Cebolinha para decorar" }
+        ],
+        "equipamento": ["Panela de barro (ttukbaegi)", "Espátula de madeira"],
+        "preparo": [
+          { "id": 1, "passo": "Refogue o kimchi e a carne de porco em uma panela." },
+          { "id": 2, "passo": "Adicione a pasta de pimenta e misture bem." },
+          { "id": 3, "passo": "Despeje a água e deixe ferver por 15 minutos." },
+          { "id": 4, "passo": "Adicione o tofu e a cebola, cozinhando por mais 5 minutos." },
+          { "id": 5, "passo": "Finalize com cebolinha picada." }
+        ],
+        "curiosidades_culturais": [
+          "Soldados carregavam kimchi em latas para as trincheiras",
+          "O kimchi velho (até 6 meses!) era usado para dar sabor"
+        ],
+        "dicas_truques": [
+          "Use kimchi com pelo menos 1 mês de fermentação",
+          "Substitua a carne por cogumelos para versão vegetariana"
+        ],
+        "imagem": "https://www.koreanbapsang.com/wp-content/uploads/2014/03/DSC_5089-3.jpg"
+      },
+      {
+        "id": 4,
+        "nome": "Sundubu Jjigae",
+        "dorama_ids": [7, 8],
+        "tempo_preparo": "35 minutos",
+        "porcoes": "2 porções",
+        "dificuldade": "Média",
+        "refeicao": "Jantar",
+        "descricao_curta": "Um ensopado coreano cremoso feito com tofu mole (sundubu), frutos do mar ou carne, e ovos. Popularizado nos anos 2000 pela Hallyu (onda coreana), ganhou versões gourmet em restaurantes de Seul a Nova York.",
+        "ingredientes": [
+          { "id": 1, "nome": "200g de tofu mole" },
+          { "id": 2, "nome": "1 xícara de kimchi" },
+          { "id": 3, "nome": "100g de carne moída ou frutos do mar" },
+          { "id": 4, "nome": "1 colher de sopa de pasta de pimenta (gochujang)" },
+          { "id": 5, "nome": "2 xícaras de caldo de anchova" },
+          { "id": 6, "nome": "1 ovo" },
+          { "id": 7, "nome": "1 cebola fatiada" },
+          { "id": 8, "nome": "2 dentes de alho picados" },
+          { "id": 9, "nome": "Cebolinha para decorar" }
+        ],
+        "equipamento": ["Panela de barro individual", "Colher de pau"],
+        "preparo": [
+          { "id": 1, "passo": "Refogue a carne moída, kimchi e alho em uma panela." },
+          { "id": 2, "passo": "Adicione a pasta de pimenta e o caldo de anchova, deixando ferver por 10 minutos." },
+          { "id": 3, "passo": "Adicione o tofu mole e cozinhe por mais 5 minutos." },
+          { "id": 4, "passo": "Quebre o ovo diretamente na panela e cozinhe até que a clara esteja firme." },
+          { "id": 5, "passo": "Finalize com cebolinha picada." }
+        ],
+        "curiosidades_culturais": [
+          "Popularizado por dramas como *Itaewon Class*",
+          "Tradicionalmente feito com tofu artesanal"
+        ],
+        "dicas_truques": [
+          "Use camarões para um sabor mais fresco",
+          "Adicione creme de leite para suavizar o picante"
+        ],
+        "imagem": "https://www.theminichef.com/wp-content/uploads/2020/10/sundubu-jjigae-1.jpg"
+      },
+      {
+        "id": 5,
+        "nome": "Jjajangmyeon",
+        "dorama_ids": [2, 9],
+        "tempo_preparo": "40 minutos",
+        "porcoes": "3 porções",
+        "dificuldade": "Média",
+        "refeicao": "Almoço",
+        "descricao_curta": "Macarrão com molho de feijão preto fermentado, símbolo da Coreia industrializada dos anos 1980. Era a refeição rápida dos operários que construíram Seul. Hoje, é tradição comer Jjajangmyeon no Dia dos Solteiros (14 de abril)!",
+        "ingredientes": [
+          { "id": 1, "nome": "300g de macarrão jjajangmyeon" },
+          { "id": 2, "nome": "200g de carne de porco em cubos" },
+          { "id": 3, "nome": "1 xícara de molho de feijão preto (chunjang)" },
+          { "id": 4, "nome": "1 cebola grande fatiada" },
+          { "id": 5, "nome": "1 batata cortada em cubos" },
+          { "id": 6, "nome": "1 abobrinha cortada em cubos" },
+          { "id": 7, "nome": "1 colher de sopa de óleo" },
+          { "id": 8, "nome": "1 colher de chá de açúcar" },
+          { "id": 9, "nome": "1 xícara de água" }
+        ],
+        "equipamento": ["Wok ou frigideira grande", "Escorredor"],
+        "preparo": [
+          { "id": 1, "passo": "Cozinhe o macarrão conforme as instruções e reserve." },
+          { "id": 2, "passo": "Refogue a carne de porco em óleo até dourar." },
+          { "id": 3, "passo": "Adicione a cebola, batata e abobrinha, refogando até ficarem macios." },
+          { "id": 4, "passo": "Misture o molho de feijão preto e o açúcar, cozinhando por 5 minutos." },
+          { "id": 5, "passo": "Adicione a água e deixe ferver até engrossar." },
+          { "id": 6, "passo": "Sirva o molho sobre o macarrão." }
+        ],
+        "curiosidades_culturais": [
+          "Comido no Dia dos Solteiros (14 de abril) na Coreia",
+          "Influência de imigrantes chineses adaptada ao paladar coreano"
+        ],
+        "dicas_truques": [
+          "Adicione amido de milho para engrossar o molho",
+          "Use tofu defumado para versão vegetariana"
+        ],
+        "imagem": "https://www.maangchi.com/wp-content/uploads/2007/07/jjajangmyeon-plate.jpg"
+      },
+      {
+        "id": 6,
+        "nome": "Tteokbokki",
+        "dorama_ids": [8, 4],
+        "tempo_preparo": "20 minutos",
+        "porcoes": "2 porções",
+        "dificuldade": "Fácil",
+        "refeicao": "Café da manhã",
+        "descricao_curta": "Bolinhos de arroz cozidos em molho picante de gochujang. Nos anos 1980, estudantes protestavam contra a ditadura com esse lanche de rua nas mãos. Hoje, é um símbolo de resistência e juventude!",
+        "ingredientes": [
+          { "id": 1, "nome": "200g de tteok (bolinhos de arroz)" },
+          { "id": 2, "nome": "2 xícaras de caldo de anchova" },
+          { "id": 3, "nome": "2 colheres de sopa de pasta de pimenta (gochujang)" },
+          { "id": 4, "nome": "1 colher de sopa de açúcar" },
+          { "id": 5, "nome": "1 colher de sopa de molho de soja" },
+          { "id": 6, "nome": "1 cebola fatiada" },
+          { "id": 7, "nome": "1 ovo cozido (opcional)" },
+          { "id": 8, "nome": "Cebolinha para decorar" }
+        ],
+        "equipamento": ["Frigideira antiaderente", "Espátula de silicone"],
+        "preparo": [
+          { "id": 1, "passo": "Misture o caldo, a pasta de pimenta, o açúcar e o molho de soja em uma panela." },
+          { "id": 2, "passo": "Adicione os bolinhos de arroz e a cebola, cozinhando até o molho engrossar." },
+          { "id": 3, "passo": "Decore com cebolinha e ovo cozido, se desejar." }
+        ],
+        "curiosidades_culturais": [
+          "Originalmente um prato real sem pimenta, adoçado com mel",
+          "Vendido em barracas perto de universidades durante protestos"
+        ],
+        "dicas_truques": [
+          "Reduza o gochujang e use ketchup para versão suave",
+          "Deixe os bolinhos de molho em água morna antes de cozinhar"
+        ],
+        "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tteokbokki.JPG/1200px-Tteokbokki.JPG"
+      },
+      {
+        "id": 7,
+        "nome": "Samgyeopsal",
+        "dorama_ids": [6, 10],
+        "tempo_preparo": "30 minutos",
+        "porcoes": "4 porções",
+        "dificuldade": "Fácil",
+        "refeicao": "Jantar",
+        "descricao_curta": "Churrasco de barriga de porco grelhado na mesa, símbolo da ascensão da classe média nos anos 1980. Representa comunhão: amigos dividem a carne, bebem soju e falam de vida.",
+        "ingredientes": [
+          { "id": 1, "nome": "500g de barriga de porco em fatias" },
+          { "id": 2, "nome": "Alface para enrolar" },
+          { "id": 3, "nome": "Pasta de alho" },
+          { "id": 4, "nome": "Molho ssamjang" },
+          { "id": 5, "nome": "Kimchi" },
+          { "id": 6, "nome": "Cebolinha picada" }
+        ],
+        "equipamento": ["Chapa de grelhar", "Tesoura de cozinha"],
+        "preparo": [
+          { "id": 1, "passo": "Grelhe as fatias de barriga de porco em uma chapa ou frigideira." },
+          { "id": 2, "passo": "Sirva com alface, pasta de alho, molho ssamjang e kimchi." },
+          { "id": 3, "passo": "Enrole a carne e os acompanhamentos na alface e aproveite." }
+        ],
+        "curiosidades_culturais": [
+          "Ritual social: discutia-se negócios e política ao redor da grelha",
+          "Símbolo da liberdade econômica pós-ditadura"
+        ],
+        "dicas_truques": [
+          "Escolha cortes com camadas equilibradas de carne e gordura",
+          "Use papel alumínio com açúcar mascavo para fumaça aromática"
+        ],
+        "imagem": "https://marcwiner.com/wp-content/uploads/2024/11/Samgyeopsal-en-tete.webp"
+      },
+      {
+        "id": 8,
+        "nome": "Japchae",
+        "dorama_ids": [10, 3],
+        "tempo_preparo": "40 minutos",
+        "porcoes": "4 porções",
+        "dificuldade": "Média",
+        "refeicao": "Almoço",
+        "descricao_curta": "Macarrão de batata-doce salteado com vegetais e carne, servido em festas e celebrações. Na Coreia, simboliza longevidade e sorte. Era um prato real na dinastia Joseon!",
+        "ingredientes": [
+          { "id": 1, "nome": "200g de macarrão de batata-doce (dangmyeon)" },
+          { "id": 2, "nome": "100g de carne em tiras" },
+          { "id": 3, "nome": "1 cenoura cortada em tiras" },
+          { "id": 4, "nome": "1 cebola fatiada" },
+          { "id": 5, "nome": "1 pimentão cortado em tiras" },
+          { "id": 6, "nome": "2 colheres de sopa de óleo de gergelim" },
+          { "id": 7, "nome": "2 colheres de sopa de molho de soja" },
+          { "id": 8, "nome": "1 colher de sopa de açúcar" },
+          { "id": 9, "nome": "Gergelim torrado para decorar" }
+        ],
+        "equipamento": ["Wok ou frigideira grande", "Escorredor"],
+        "preparo": [
+          { "id": 1, "passo": "Cozinhe o macarrão conforme as instruções e reserve." },
+          { "id": 2, "passo": "Refogue a carne e os vegetais separadamente." },
+          { "id": 3, "passo": "Misture o macarrão com os vegetais e a carne." },
+          { "id": 4, "passo": "Tempere com óleo de gergelim, molho de soja e açúcar." },
+          { "id": 5, "passo": "Finalize com gergelim torrado." }
+        ],
+        "curiosidades_culturais": [
+          "Servido ao rei Gwanghaegun no século XVII",
+          "Obrigatório nas mesas de Ano Novo Lunar (Seollal)"
+        ],
+        "dicas_truques": [
+          "Não cozinhe demais o macarrão para manter a textura",
+          "Use cogumelos shiitake para versão vegetariana"
+        ],
+        "imagem": "https://images.getrecipekit.com/20240228032059-andy-20cooks-20-20japchae.jpg?aspect_ratio=16:9&quality=90&"
+      },
+      {
+        "id": 9,
+        "nome": "Patbingsu",
+        "dorama_ids": [9, 3],
+        "tempo_preparo": "15 minutos",
+        "porcoes": "2 porções",
+        "dificuldade": "Fácil",
+        "refeicao": "Sobremesa",
+        "descricao_curta": "Raspadinha coreana com feijão vermelho doce, frutas e leite condensado. Nos anos 2000, ganhou versões modernas com matcha e frutas exóticas, refletindo a influência global da Hallyu.",
+        "ingredientes": [
+          { "id": 1, "nome": "2 xícaras de gelo raspado" },
+          { "id": 2, "nome": "1/2 xícara de doce de feijão vermelho" },
+          { "id": 3, "nome": "1/2 xícara de frutas variadas (manga, morango, kiwi)" },
+          { "id": 4, "nome": "1 colher de sopa de leite condensado" },
+          { "id": 5, "nome": "Gergelim torrado para decorar" }
+        ],
+        "equipamento": ["Processador de gelo", "Tigelas de servir"],
+        "preparo": [
+          { "id": 1, "passo": "Coloque o gelo raspado em uma tigela." },
+          { "id": 2, "passo": "Adicione o doce de feijão e as frutas por cima." },
+          { "id": 3, "passo": "Regue com leite condensado e finalize com gergelim torrado." }
+        ],
+        "curiosidades_culturais": [
+          "Vendido em carrinhos de rua nos anos 70",
+          "Versões premium incluem matcha e folhas de ouro"
+        ],
+        "dicas_truques": [
+          "Adicione leite ao triturar o gelo para cremosidade",
+          "Use frutas da estação para frescor"
+        ],
+        "imagem": "https://www.koreanbapsang.com/wp-content/uploads/2014/07/Patbingsu-recipe-21.jpg"
+      },
+      {
+        "id": 10,
+        "nome": "Budae Jjigae",
+        "dorama_ids": [4, 8],
+        "tempo_preparo": "30 minutos",
+        "porcoes": "3 porções",
+        "dificuldade": "Média",
+        "refeicao": "Jantar",
+        "descricao_curta": "Um ensopado improvisado com salsicha, presunto e macarrão instantâneo, criado após a Guerra da Coreia com rações militares dos EUA. Hoje, é um prato cultuado em restaurantes temáticos.",
+        "ingredientes": [
+          { "id": 1, "nome": "2 xícaras de caldo de carne" },
+          { "id": 2, "nome": "1 xícara de kimchi" },
+          { "id": 3, "nome": "100g de salsicha" },
+          { "id": 4, "nome": "100g de presunto" },
+          { "id": 5, "nome": "1 xícara de macarrão instantâneo" },
+          { "id": 6, "nome": "1/2 xícara de tofu cortado em cubos" },
+          { "id": 7, "nome": "1 cebola fatiada" },
+          { "id": 8, "nome": "1 colher de sopa de pasta de pimenta (gochujang)" },
+          { "id": 9, "nome": "Cebolinha para decorar" }
+        ],
+        "equipamento": ["Panela de ferro fundido", "Colher grande"],
+        "preparo": [
+          { "id": 1, "passo": "Em uma panela, misture o caldo, kimchi, pasta de pimenta e cebola." },
+          { "id": 2, "passo": "Adicione a salsicha, o presunto e o tofu, deixando ferver por 10 minutos." },
+          { "id": 3, "passo": "Adicione o macarrão instantâneo e cozinhe até ficar macio." },
+          { "id": 4, "passo": "Finalize com cebolinha picada." }
+        ],
+        "curiosidades_culturais": [
+          "Nome significa 'guisado da unidade militar'",
+          "Restaurantes recriam atmosfera pós-guerra com decoração vintage"
+        ],
+        "dicas_truques": [
+          "Use Spam e salsicha Vienna para autenticidade",
+          "Adicione café solúvel ao caldo para sabor defumado"
+        ],
+        "imagem": "https://static01.nyt.com/images/2022/06/15/dining/15ESSENTIALSrex2/15ESSENTIALSrex2-threeByTwoMediumAt2X.jpg"
+      }
+    ]
+
 }

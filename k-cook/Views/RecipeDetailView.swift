@@ -28,7 +28,10 @@ struct RecipeDetailView: View {
                     Text(receitaOriginal.nome)
                         .font(.title3)
                         .fontWeight(.bold)
-
+                    Text("O que é \(receitaOriginal.nome)?")
+                        .fontWeight(.medium)
+                    Text(receitaOriginal.descricao_curta)
+                    
                     HStack(alignment: .center, spacing: 20) {
                         InfoBox(
                             icon: "stopwatch", title: "Tempo de Preparo:",
