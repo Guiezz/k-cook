@@ -9,7 +9,7 @@ import SwiftData
 
 @Model
 class ReceitaFavorita {
-    var recipeId: Int // Nome deve bater com o usado no código
+    var recipeId: Int
     
     init(recipeId: Int) {
         self.recipeId = recipeId

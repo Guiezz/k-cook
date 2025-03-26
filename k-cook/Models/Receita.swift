@@ -6,12 +6,12 @@ struct Receita: Codable, Identifiable {
     let porcoes: String
     let dificuldade: String
     let refeicao: String
-    let descricao_curta: String // Novo campo
+    let descricao_curta: String
     let ingredientes: [Ingrediente]
-    let equipamento: [String] // Novo campo
+    let equipamento: [String]
     let preparo: [PassoPreparo]
-    let curiosidades_culturais: [String] // Novo campo
-    let dicas_truques: [String] // Novo campo
+    let curiosidades_culturais: [String]
+    let dicas_truques: [String]
     let imagem: String
     var isFavorited: Bool = false
     
